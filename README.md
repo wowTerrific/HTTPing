@@ -1,5 +1,4 @@
 # HTTPing
-
 Sends HTTP requests and checks response for `200 OK` to a list of URLs.
 
 ## Setup
