@@ -1,18 +1,16 @@
 package ping
 
 import (
-	"log"
+	"fmt"
 	"net/http"
-	"os"
 )
 
 func Ping(url string) string {
 	res, err := http.Get(url)
 
 	if err != nil {
-		log.Fatalf("error in ping: %v", err)
-		os.Exit(1)
+		return fmt.Sprintf("%s - %s", url, err.Error())
 	}
 
-	return res.Status
+	return fmt.Sprintf("%s - %s", url, res.Status)
 }
